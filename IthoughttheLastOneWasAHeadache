@@ -1,0 +1,42 @@
+const getSleepHours= (day) =>{
+if (day === 'Monday') {
+    return 8;
+  } else if  (day === 'Tuesday'){
+    return 10;
+  } else if (day === 'Wednesday'){
+    return 7;
+  } else if (day === 'Thursday'){
+    return 8;
+  } else if (day === 'Friday'){
+    return 9;
+  } else if (day === 'Saturday'){
+    return 5;
+  } else if (day === 'Sunday'){
+    return 6;
+  }
+  
+};
+//We are good at this point in the code
+const getActualSleepHours = () => 
+  getSleepHours('Monday') + getSleepHours('Tuesday') + getSleepHours('Wednesday') + getSleepHours('Thursday') + getSleepHours('Friday') + getSleepHours ('Saturday') + getSleepHours('Sunday');
+//Found the problem
+const getIdealSleepHours= () => {
+  const idealHours = 6;
+  return idealHours *7;
+};
+
+const calculateSleepDebt = () => {
+    const actualSleepHours = getActualSleepHours();
+    const idealSleepHours = getIdealSleepHours(); if (actualSleepHours === idealSleepHours) {
+  console.log('Good Job');
+} else if (actualSleepHours > idealSleepHours) {
+  console.log('Not good');
+} else {
+  console.log('Very Not Good');
+} if (actualSleepHours < idealSleepHours) {
+  console.log('You got ' + (idealSleepHours - actualSleepHours) + ' hour(s) less sleep than you needed this week. Get some rest.');
+};
+}
+//I think its ok up to here, atleast I hope so
+calculateSleepDebt();
+ //I am very proud this code took hours and I had to try through multiple failures. Hopefully its easier next time. 
